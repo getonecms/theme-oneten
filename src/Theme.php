@@ -19,11 +19,11 @@ class Theme extends BaseTheme
      */
     public function init(): void
     {
-        $this->setBasePath('@Themes/oneten');
-        $this->setBaseUrl('@Themes/oneten');
+        $this->setBasePath(dirname(__DIR__));
+        $this->setBaseUrl(dirname(__DIR__));
 
         $this->pathMap = [
-            '@App/templates' => '@Themes/oneten/templates'
+            '@App/templates' => $this->getBasePath() . '/templates'
         ];
 
         parent::init();

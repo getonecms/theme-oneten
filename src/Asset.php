@@ -14,11 +14,19 @@ use yii\web\AssetBundle;
  */
 class Asset extends AssetBundle
 {
-    public $sourcePath = '@Themes/oneten/dist';
     public $css = [
         'css/app.css'
     ];
+
     public $js = [
         'js/app.js'
     ];
+
+    /**
+     * @inheritDoc
+     */
+    public function init(): void
+    {
+        $this->sourcePath = dirname(__DIR__) . '/dist';
+    }
 }
