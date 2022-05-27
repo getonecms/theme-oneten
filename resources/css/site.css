@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+/* @layer utilities {
     @variants responsive {
         .text-shadow {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
@@ -20,6 +20,11 @@
             text-shadow: none;
         }
     }
+} */
+
+body {
+    font-size: 16px;
+    font-weight: 1.5rem;
 }
 
 .section-intro {

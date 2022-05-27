@@ -1,7 +1,11 @@
-const mix = require('laravel-mix')
+let mix = require('laravel-mix')
 
-mix.js("assets/js/app.js", "js")
-    .postCss("assets/css/app.css", "css", [
+mix.js("resources/js/admin.js", "js")
+    .js("resources/js/site.js", "js")
+    .postCss("resources/css/admin.css", "css", [
+        require("tailwindcss"),
+    ])
+    .postCss("resources/css/site.css", "css", [
         require("tailwindcss"),
     ])
     .options({
@@ -10,10 +14,12 @@ mix.js("assets/js/app.js", "js")
     .setPublicPath('dist')
     .browserSync({
         files: [
-            './assets/**/*.js',
-            './assets/**/*.css',
+            './resources/assets/**/*.{js,css}',
             './templates/admin/**/*.php',
             './templates/**/*.php',
         ],
-        proxy: 'getonecms.test/app/public/'
+        proxy: 'http://getonecms.wsl/',
+        port: 3000
     })
+    .copyDirectory('resources/images', 'dist/images')
+    .copy('node_modules/bootstrap-icons/bootstrap-icons.svg', 'dist/images/icons.svg')

@@ -1,3 +1,3 @@
-# OneTen (OneCMS Theme)
+# OneTen (OneCMS default theme)
 
-OneTen is an official and first front-end OneCMS theme
+OneTen is an OneCMS's official front-end default theme.
